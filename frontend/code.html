@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ ds.upper() }} Code</title>
+    <style>
+        body { background: #0f172a; color: #f8fafc; font-family: 'Courier New', monospace; padding: 50px; }
+        .code-container { background: #1e293b; padding: 20px; border-radius: 8px; border: 1px solid #38bdf8; line-height: 1.5; }
+        button { background: #38bdf8; color: #0f172a; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <button onclick="window.history.back()">← Back to Visualizer</button>
+    <h1>{{ ds.upper() }} Implementation</h1>
+    <div class="code-container">
+        <pre>{{ code_content }}</pre>
+    </div>
+</body>
+</html>

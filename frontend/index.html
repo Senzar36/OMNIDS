@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OmniDS | Interactive Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Inter:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-shell">
+        <nav class="side-panel left-nav">
+            <h1 class="logo" style="color:var(--electric-amber); font-family:'Orbitron';">OMNI<span>DS</span></h1><br>
+            <ul class="nav-menu">
+                <li class="active" onclick="setMode('linked_list', this)">Linked List</li><br>
+                <li onclick="setMode('stack', this)">Stack</li><br>
+                <li onclick="setMode('queue', this)">Queue</li><br>
+                <li onclick="setMode('bst', this)">Binary Tree</li><br>
+                <li onclick="setMode('deque', this)">Deque</li><br>
+                <li onclick="setMode('circular_queue', this)">Circular Queue</li><br>
+                <li onclick="setMode('circular_linked_list', this)">Circular Linked List</li><br>
+            </ul>
+            <button class="info-btn" onclick="openModal()">LEARN MORE</button>
+        </nav>
+
+        <main class="main-viewport">
+            <header class="lab-header">
+                <h2 id="ds-title">LINKED LIST</h2>
+                <div class="header-actions">
+                    <select id="langSelect" class="dark-select">
+                        <option value="Select" disabled selected>SELECT LANGUAGE</option>
+                        <option value="python">PYTHON</option>
+                        <option value="java">JAVA</option>
+                        <option value="c">C LANGUAGE</option>
+                    </select>
+                    <button class="btn-neon" onclick="goToCodePage()">VIEW CODE</button>
+                </div>
+            </header>
+            
+            <div class="canvas-container">
+                <div id="visual-canvas" class="canvas">
+                    </div>
+            </div>
+        </main>
+
+        <aside class="side-panel right-ops">
+            <span class="label-tag">OPERATIONS</span>
+            <div id="op-buttons" class="command-grid"></div>
+            
+            <div class="stats-panel">
+                <span class="label-tag">PERFORMANCE</span>
+                <p>TIME: <span id="time-comp">O(n)</span></p>
+                <p>SPACE: <span id="space-comp">O(n)</span></p>
+            </div>
+        </aside>
+    </div>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title" style="color:var(--electric-amber); font-family:'Orbitron'; margin-bottom: 10px;">INFO</h2>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/visualizer.js') }}"></script>
+</body>
+</html>
